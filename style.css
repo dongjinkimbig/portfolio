@@ -8,6 +8,7 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-beige: beige;
+    
 
     --font-large: 48px;
     --font-medium: 28px;
@@ -33,7 +34,7 @@ li{
     list-style: none;
 }
 button{
-    background-color: turquoise;
+    background-color: rgb(242, 243, 225);
     cursor: pointer;
     border: none;
     outline: none;
@@ -69,5 +70,64 @@ p{
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background-color: var(--color-beige);
+    background-color: rgb(0, 0, 0);
+}
+
+.navbar__logo{
+    font-size: var(--font-medium);
+    font-weight: bold;
+    color: var(--color-white);
+
+}
+.navbar__menu{
+    display: flex;
+}
+.navbar__menu__item{
+    padding: 8px 12px;
+    margin: 0 4px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+.navbar__menu__item.active{
+    border: 1px solid white;
+    border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item:hover{
+    background-color: pink;
+    border-radius: var(--size-border-radius);
+}
+
+.navbar__togle-btn{
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    color: white;
+    display: none;
+}
+
+/* 홈 */
+#home{
+    background: url(./Images/BackGround2.png) center/cover no-repeat;
+    padding: 40px;
+    text-align: center;
+}
+.home__avatar{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.home__title, .home__description{
+    color: rgb(242, 243, 225);
+}
+.home__contact{
+    color: var(--color-white);
+    font-size: var(--font-regular);
+    font-weight: bold;
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid white;
+    border-radius: var(--size-border-radius);
 }
