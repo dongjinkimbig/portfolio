@@ -8,7 +8,9 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-beige: beige;
-    
+    --color-grey: rgb(68, 68, 66);
+    --color-yellow: rgb(239, 239, 132);
+    --color-red: rgb(255, 0, 0);
 
     --font-large: 48px;
     --font-medium: 28px;
@@ -136,6 +138,7 @@ p{
     border-radius: var(--size-border-radius);
 }
 
+/* section 공통 */
 .section{
     padding: 50px;
     text-align: center;
@@ -157,11 +160,8 @@ p{
 .Jtitle{
     margin-bottom: 25px;
 }
-.office__logo{
-    width: 50px;
-    height: 50px;
-}
 
+/* 내소개 */
 .major__icon{
     width: 170px;
     height: 170px;
@@ -173,25 +173,247 @@ p{
     border-radius: 50%;
     margin-bottom: 16px;
 }
+
 .major__icon i{
     transition: all var(--animation-duration) ease;
 
 }
+
 .major__icon:hover i {
     color: pink;
     transform: rotate(-30deg) scale(1.1);
 }
 
+.major__title, .major__description {
+    color: var(--color-grey);
+}
 
+.major__description{
+    font-size: var(--font-small);
+}
 
+.job {
+    display: flex;
+    align-items: center;
+}
+.job__description{
+    margin: 0 16px;
+    text-align: left;
+}
 
+.job__name, .job__period{
+    color: var(--color-grey);
+}
 
+.job__name{
+    font-size: var(--font-small);
+}
+.job__period{
+    font-size: var(--font-micro);
+}
 
+.office__logo{
+    width: 90px;
+    height: 90px;
+}
+/* 기술 */
+#skills{
+    background-color: var(--color-yellow);
+}
+
+.skillset {
+    display: flex;
+    background-color: var(--color-grey);
+    color: white;
+    margin: 20px 0;
+}
+
+.skillset__title{
+    color: white;
+}
+
+.skillset__left{
+    flex-basis: 60%;
+    background-color: var(--color-black);
+    padding: 20px 40px;
+}
+.skill {
+    margin-bottom: 32px;
+}
+.skill__description{
+    display: flex;
+    justify-content: space-between;
+}
+.skill__bar{
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-grey);
+}
+.skill__value{
+    height: 3px;
+    background-color: var(--color-red);
+}
+
+.skill__right{
+    flex-basis: 40%;
+
+}
+.tools{
+    background-color: var(--color-grey);
+}
+.etc{
+    padding: 20px;
+}
+
+/* 내 작업실(프로젝트) */
 .work__categories{
-    margin-bottom: 20px;
+    margin: 40px;
+}
+.category__btn{
+    border: 1px solid var(--color-grey);
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+    color: white;
+}
+.category__btn.activ, .category__btn:hover{
+    background-color: pink;
+    color: white;
 }
 
-.project__image{
-    width: 300px;
-    height: 350px;
+.category__btn.active .category__count,
+.category__btn:hover .category__count{
+    opacity: 1;
+    top: 0;
 }
+.category__count{
+    background-color: var(--color-red);
+    border-radius: 50%;
+    color: white;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    left: 4px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.work__projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: var(--color-yellow);
+}
+.project__image{
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+}
+.project__description {
+    position: absolute;
+    background-color:black;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: translateY(10px);
+    transition: all var(--animation-duration) ease;
+
+}
+.project:hover .project__description{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project__description h3{
+    color: var(--color-white);
+}
+
+.project__description h3:after{
+    content:'';
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    margin-left: -12px;
+    margin-top: 8px;
+    background-color: purple;
+}
+/* 추천서 */
+#testimonials{
+    background-color: var(--color-yellow);
+}
+.testimonials{
+    margin: 40px;
+}
+.testimonial {
+    display: flex;
+    margin: 32px 0;
+}
+.testimonial__avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.testimonial__avatar:nth-child(odd){
+    margin-right: 40px;
+}
+.testimonial__avatar:nth-child(even){
+    margin-left: 40px;
+}
+
+.testimonial__speech-bubble {
+    padding: 18px;
+    background-color: var(--color-white);
+    border-radius: var(--size-border-radius);
+}
+
+.testimonial__speech-bubble p{
+    color: var(--color-grey);
+
+}
+.testimonial__speech-bubble a{
+    color: pink;
+}
+
+/* Contact */
+#contact {
+    background-color: pink;
+
+}
+.contact__title, .contact__email, .contact__rights {
+    color: var(--color-white);
+}
+.contact__title {
+    margin: 32px 0;
+}
+.contact__links {
+    font-size: var(--font-large);
+    margin: 24px 0;
+    transition: all var(--animation-duration) ease-in;
+
+}
+.contact__links i:hover{
+    transform: scale(1.1);
+    color: var(--color-yellow);
+}
+
