@@ -11,6 +11,7 @@
     --color-grey: rgb(68, 68, 66);
     --color-yellow: rgb(239, 239, 132);
     --color-red: rgb(255, 0, 0);
+    --color-deeppink: deeppink;
 
     --font-large: 48px;
     --font-medium: 28px;
@@ -25,6 +26,56 @@ body{
     font-family: 'twayair', sans-serif;
     margin: 0;
 }
+.sidebar{
+    position: sticky;
+    box-sizing: border-box;
+    width: 10%;
+    min-width: 120px;
+    background-color: rgb(139, 139, 139);
+    height: 230px;
+    top: 120px;
+    left: 20px;  
+    opacity: 0.8;
+    padding: 20px 0 20px 25px;
+    border: 1px solid grey;
+    border-radius: 20%;
+}
+
+/* 홈 화살표 */
+.arrow--bold{
+    display: none;
+}
+
+.fa-arrow-up{
+    position: fixed;
+    right: 3%;
+    bottom: 6%;
+    scale: 2;
+    border-radius: 50%;
+    padding: 3px 4px;
+    background-color: deeppink;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease-in;
+}
+
+.fa-arrow-up.visible{
+    opacity: 1;
+    pointer-events: auto;
+}
+.fa-arrow-up:hover{
+    cursor: pointer;
+}
+/* 홈 화살표 끝 */
+
+.side>li{
+    line-height: 28px;
+    
+}
+#sidebar{
+    color: black;
+}
 a{
     text-decoration: none;
     color: var(--color-white);
@@ -35,14 +86,22 @@ ul{
 li{
     list-style: none;
 }
-#Jserve{
+.job__exp>li{
     list-style: disc;
+    text-align: left;
+    
+
 }
 button{
     background-color: rgba(94, 89, 83, 0.696);
     cursor: pointer;
     border: none;
     outline: none;
+    transition: all var(--animation-duration) ease;
+}
+button:hover{
+    transform: scale(1.3);
+    
 }
 
 h1{
@@ -71,12 +130,20 @@ p{
 
 /* Navbar */
 #navbar{
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
     background-color: rgba(94, 89, 83, 0.696);
-    
+    z-index: 1;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--bold{
+    background-color: var(--color-deeppink);
+    padding: 10px;
 }
 
 .navbar__logo{
@@ -156,6 +223,11 @@ p{
 .about__jobs{
     text-align: center;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.about__jobs__title{
+    text-align: center;
 }
 .Jtitle{
     margin-bottom: 25px;
@@ -195,11 +267,12 @@ p{
 .job {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
-.job__description{
+/* .job__description{
     margin: 0 16px;
     text-align: left;
-}
+} */
 
 .job__name, .job__period{
     color: var(--color-grey);
@@ -213,12 +286,21 @@ p{
 }
 
 .office__logo{
+
     width: 90px;
     height: 90px;
+}
+.office__logo__left{
+    flex-basis: 40%;
+}
+.description{
+    flex-basis: 60%;
+    margin-left: 20px;
 }
 /* 기술 */
 #skills{
     background-color: var(--color-yellow);
+    margin-top: 30px;
 }
 
 .skillset {
@@ -254,8 +336,9 @@ p{
     background-color: var(--color-red);
 }
 
-.skill__right{
+.skillset__right{
     flex-basis: 40%;
+    padding: 20px 0;
 
 }
 .tools{
@@ -266,6 +349,14 @@ p{
 }
 
 /* 내 작업실(프로젝트) */
+
+.project__categories{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+
 .work__categories{
     margin: 40px;
 }
@@ -306,21 +397,33 @@ p{
     flex-wrap: wrap;
     justify-content: center;
 }
+/* .project__categories>.work__projects>.project:nth-child(odd){
+    background-color: aquamarine;
+} */
+.section__container  .work__projects:nth-child(odd){
+    background-color: rgb(209, 203, 121);
+}
+.section__container  .work__projects:nth-child(even){
+    background-color: rgb(241, 189, 106);
+}
 
 .project {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 280px;
-    height: 250px;
+    width: 320px;
+    height: 280px;
     margin: 2px;
-    background-color: var(--color-yellow);
+    /* background-color: darkseagreen; */
 }
+
+
 .project__image{
     max-width: 100%;
     max-height: 100%;
     align-self: center;
+    padding: 50px;
 }
 .project__description {
     position: absolute;
@@ -446,6 +549,9 @@ p{
     .testimonial__avatar{
         width: 80px;
         height: 80px;
+    }
+    .sidebar{
+        display:none;
     }
 
 }

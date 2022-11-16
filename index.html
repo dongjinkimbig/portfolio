@@ -7,24 +7,31 @@
     <meta name="author" content="Kim DJ">               
     <meta name="description" content="개발자 꿈나무">
     <link rel="icon" type="image/png" href="./Images/face-smile.png">
+    
     <script src="https://kit.fontawesome.com/49aeb7d1f9.js" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="style.css">
+    <script defer src="Script.js"></script>
 </head>
 <body>
+    <a name="home__home"></a>
+
+    
+
     <!-- Navbar 시작 -->
     <nav id="navbar">
+        
         <div class="navbar__logo">
             <i class="fa-regular fa-face-smile-wink"></i>
             <a href="#">Dongjin Kim</a>
         </div>
 
         <ul class="navbar__menu">
-            <li class="navbar__menu__item active">홈</li>
-            <li class="navbar__menu__item">소개</li>
-            <li class="navbar__menu__item">기술</li>
-            <li class="navbar__menu__item">프로젝트</li>
-            <li class="navbar__menu__item">추천서</li>
-            <li class="navbar__menu__item">Contact</li>
+            <li class="navbar__menu__item active" data-link="#home">홈</li>
+            <li class="navbar__menu__item" data-link="#about">소개</li>
+            <li class="navbar__menu__item" data-link="#skills">기술</li>
+            <li class="navbar__menu__item" data-link="#work">프로젝트</li>
+            <li class="navbar__menu__item" data-link="#testimonials">추천서</li>
+            <li class="navbar__menu__item" data-link="#contact">Contact</li>
         </ul>
         <!-- 버튼 시작 -->
         <button class="navbar__togle-btn">
@@ -34,16 +41,31 @@
     </nav>
     <!-- Navbar 끝 -->
     <!-- Home 시작 -->
+    
     <section id="home">
         <div class="home__container">
             <img src="./Images/peopelCat-removebg.png" alt="DJ's photo" class="home__avatar">
             <h1 class="home__title">안녕하세요. 저는 김동진 입니다</h1>
             <h2 class="home__description">서울 강남구에 거주중이며 개발자 꿈나무입니다!</h2>
-            <button class="home__contact">연락주세요!</button>
+            <button class="home__contact" data-link="#contact">연락주세요!</button>
         </div>
     </section>
     <!-- Home 끝 -->
 <!-- 내 소개 시작 -->
+
+<div class="sticky__container">
+    <a name="intro"></a>
+    <aside class="sidebar">
+        <ul class="side">
+            <li id="sidebar"><a href="#home__home">홈</a></li>
+            <li id="sidebar"><a href="#intro">소개</a></li>
+            <li id="sidebar"><a href="#sk">기술</a></li>
+            <li id="sidebar"><a href="#pj">프로젝트</a></li>
+            <li id="sidebar"><a href="#rec">추천서</a></li>
+            <li id="sidebar"><a href="#ct">Contact</a></li>
+        </ul>
+    </aside>
+    
 <section id="about" class="section section__container">
     <h1>내 소개</h1>
     <p>
@@ -86,12 +108,12 @@
     </div>
 </section>
 
+<h2 class="about__jobs__title Jtitle">근무 이력</h2>
 <div class="about__jobs">
-    <h2 class="about__jops__title Jtitle">근무 이력</h2>
+    
     <div class="job">
+        <div class="office__logo__left">
         <img src="./Images/OffLogo.png" alt="회사로고" class="office__logo">
-    </div>
-    <div class="description">
         <p class="job__name">
             R&D 연구원
         </p>
@@ -99,6 +121,9 @@
         <p class="job__period">
             2020. 03. ~ 2022. 08
         </p>
+    </div>
+    <div class="description">
+        
         <ul class="job__exp">
             <h3>근무 사항</h3>
             <li class="job__serve">회로도 수정 및 개발</li>
@@ -107,8 +132,10 @@
         </ul>
     </div>
 </div>
+</div>
 <!-- 내 소개 끝 -->
 <!-- 기술 시작 -->
+<a name="sk"></a>
 <section id="skills" class="section">
     <div class="section__container">
         <h1>기술</h1>
@@ -193,55 +220,56 @@
 
             </div>
 
-            <div class="skillser__right">
+            <div class="skillset__right">
                 <div class="tools">
-                    <h3 class="skillset__title">tools</h3>
+                    <h3 class="skillset__title">Tools</h3>
                     <ul class="tools__list">
-                        <li><span>Visual studio code</span></li>
-                        <li>IntelliJ</li>
-                        <li>Android Studio</li>
-                        <li>Xcode</li>
-                        <li>Github Desktop</li>
+                        <li><span>Visual Studio Code</span></li>
+                        <li><span>IntelliJ</span></li>
+                        <li><span>Android Studio</span></li>
+                        <li><span>Xcode</span></li>
+                        <li><span>Github Desktop</span></li>
                     </ul>
                 </div>
-            
-            <div class="tools">
-            <div class="etc">Etc
-                <ul class="etc__list">
-                    <li><span>Math</span></li>
-                    <li><span>Run</span></li>
-                    <li><span>Music</span></li>
-                </ul>
+                <div class="etc">
+                    <h3 class="skillset__title">Etc</h3>
+                    <ul class="etc__list">
+                        <li><span>Math</span></li>
+                        <li><span>Run</span></li>
+                        <li><span>Music</span></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
 </div>
     </div>
 </section>
 <!-- 기술 끝 -->
+
 <!-- 프로젝트 시작 -->
+<a name="pj"></a>
 <section id="work" class="section">
     <div class="section__container">
         <h1>내 작업실</h1>
         <h3>프로젝트</h3>
         <div class="work__categories">
-            <button class="category__btn">
-                전체 <span class="category__count">10</span>
+            <button class="category__btn selected" data-filter="*">
+                전체 <span class="category__count">12</span>
             </button>
-            <button class="category__btn">
-                프론트엔드 <span class="category__count">5</span>
+            <button class="category__btn" data-filter="front-end">
+                프론트엔드 <span class="category__count">7</span>
             </button>
-            <button class="category__btn">
+            <button class="category__btn" data-filter="back-end">
                 백엔드 <span class="category__count">3</span>
             </button>
-            <button class="category__btn">
+            <button class="category__btn" data-filter="mobile">
                 모바일 <span class="category__count">2</span>
             </button>
             
         </div>
 
+        <div class="project__categories">
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -252,7 +280,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -263,7 +291,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -274,7 +302,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -285,7 +313,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -296,7 +324,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="back-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -307,7 +335,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="back-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -318,7 +346,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="back-end">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -329,7 +357,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="mobile">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -340,7 +368,7 @@
         </div>
 
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="mobile">
                 <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
             
             <div class="project__description">
@@ -349,11 +377,36 @@
             </div>
             </a>
         </div>
+
+        <div class="work__projects">
+            <a href="#" class="project" target="_blank" data-type="front-end">
+                <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
+            
+            <div class="project__description">
+                <h3>제주항공 클론코딩</h3>
+                <span>Clone Coding 아주 잘됨</span>
+            </div>
+            </a>
+        </div>
+
+        <div class="work__projects">
+            <a href="#" class="project" target="_blank" data-type="front-end">
+                <img src="./Images/youtubecapture.jpg" alt="" class="project__image">
+            
+            <div class="project__description">
+                <h3>제주항공 클론코딩</h3>
+                <span>Clone Coding 아주 잘됨</span>
+            </div>
+            </a>
+        </div>
+
+    </div>
     </div>
 </section>
 <!-- 프로젝트 끝 -->
 
 <!-- 추천서 시작 -->
+<a name="rec"></a>
 <section id="testimonials" class="section">
     <div class="section__container">
         <h1>추천서</h1>
@@ -382,9 +435,11 @@
         </div>
     </div>
 </section>
+</div>
 <!-- 추천서 끝 -->
 
 <!-- Contect -->
+<a name="ct"></a>
 <section id="contact" class="section">
     <h1 class="contact__title">연락주세요</h1>
     <h2 class="contact__email">kdjkdj11@naver.com</h2>
@@ -402,9 +457,8 @@
 
     </p>
 </section>
-<button class="arrow-up">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
+<!-- 홈 화살표 -->
+<i class="fa-solid fa-arrow-up"></i>
 
 </body>
 </html>
